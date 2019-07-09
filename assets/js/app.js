@@ -1,16 +1,4 @@
 $(document).ready(function(){
-    $('#carouselSlideShow').carousel({
-        interval: 3000
-    });
-
-    $('.prev').on('click', function(){
-        $('#carouselSlideShow').carousel('prev')
-    });
-
-    $(".next").click(function(){
-        $("#carouselSlideShow").carousel("next");
-    });
-});
 
 // ===============================================================================================
 // ===============================================================================================
@@ -126,4 +114,4 @@ axios.get(queryURL)
       console.log('<img src="'+ data.url +'">');
 
     });
-})
+});
