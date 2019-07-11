@@ -66,10 +66,10 @@ axios.get(queryURL)
       console.log(response.data);
 
       // Transfer content to HTML
-      //$(".city").html("<h1>" + data.name + " Weather Details</h1>");
-      //$(".wind").text("Wind Speed: " + data.wind.speed);
-      //$(".humidity").text("Humidity: " + data.main.humidity);
-      //$(".temp").text("Temperature (F) " + data.main.temp);
+      $(".city").html("<h1>" + data.name + " Weather Details</h1>");
+      $(".wind").text("Wind Speed: " + data.wind.speed);
+      $(".humidity").text("Humidity: " + data.main.humidity);
+      $(".temp").text("Temperature (F) " + data.main.temp);
 
       // Log the data in the console as well
       console.log("Wind Speed: " + data.wind.speed);
