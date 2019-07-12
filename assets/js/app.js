@@ -14,6 +14,7 @@ $(document).ready(function () {
 
       // Log the resulting object
       console.log(response);
+    
       for (var i = 0; i < 10; i++) {
         var newsDiv = $("<div>");
         newsDiv.addClass("carousel-item");
@@ -78,10 +79,10 @@ $(document).ready(function () {
       console.log(response.data);
 
       // Transfer content to HTML
-      //$(".city").html("<h1>" + data.name + " Weather Details</h1>");
-      //$(".wind").text("Wind Speed: " + data.wind.speed);
-      //$(".humidity").text("Humidity: " + data.main.humidity);
-      //$(".temp").text("Temperature (F) " + data.main.temp);
+      $(".city").html("<h1>" + data.name + " Weather Details</h1>");
+      $(".wind").text("Wind Speed: " + data.wind.speed);
+      $(".humidity").text("Humidity: " + data.main.humidity);
+      $(".temp").text("Temperature (F) " + data.main.temp);
 
       // Log the data in the console as well
       console.log("Wind Speed: " + data.wind.speed);
@@ -95,7 +96,6 @@ $(document).ready(function () {
   // Here we are building the URL we need to query the database
   var queryURL = "https://api.nasa.gov/planetary/apod?api_key=" + APIKey;
 
-
   axios.get(queryURL)
     // We store all of the retrieved data inside of an object called "response"
     .then(function (response) {
@@ -108,14 +108,25 @@ $(document).ready(function () {
       console.log(response.data);
 
       // Transfer content to HTML
-      //$(".date").html("<h3> Date:" + data.date + "</h3>");
-      // $(".explanation").text("Explanation: " + data.explanation);
-      //$(".title").text("Title: " + data.title);
+
+      $(".date").html("<h3> Date:" + data.date + "</h3>");
+      $(".explanation").text("Explanation: " + data.explanation);
+      $(".title").text("Title: " + data.title);
 
       var imgURL = data.url;
-      var image = $("<img>").attr("src", imgURL);
-      // $(".url-displayed").append(image);
 
+      function checkURL(url) {
+      if (url.match(/\.(jpeg|jpg|gif|png)$/) != null){
+    
+        var image = $("<img>").attr("src", imgURL);
+        $(".url-displayed").append(image);
+      }
+      else {
+        var video = $("<iframe allowfullscreen>" + imgURL + "</iframe>").attr("src", imgURL);
+        $(".url-displayed").append(video);
+      }
+    }
+    checkURL(imgURL);
 
       // Log the data in the console as well
       console.log("<h3> Date:" + data.date + "</h3>");
@@ -124,4 +135,8 @@ $(document).ready(function () {
       console.log('<img src="' + data.url + '">');
 
     });
+
+
+
+
 });
