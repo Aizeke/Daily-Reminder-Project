@@ -119,10 +119,12 @@ $(document).ready(function () {
         if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
 
           var image = $("<img>").attr("src", imgURL);
+          image.attr('class', 'img-fluid');
           $(".url-displayed").append(image);
         }
         else {
           var video = $("<iframe allowfullscreen>" + imgURL + "</iframe>").attr("src", imgURL);
+          image.attr('class', 'img-fluid');
           $(".url-displayed").append(video);
         }
       }
@@ -154,7 +156,7 @@ $('#year').text(year);
 $('#weekday').text(weekday);
 
 // On click whole item will strike a line thorugh it
-$("ul").on("click", "li", function () {
+$(".lead").on("click", "li", function () {
   $(this).toggleClass("done");
 });
 

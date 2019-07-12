@@ -15,7 +15,7 @@ h5 {
     text-align: center;
 }
 
-ul li {
+.lead li {
     cursor: pointer;
     position: relative;
     padding: 10px 8px 10px 0px;
@@ -33,6 +33,10 @@ ul li {
   .delete:hover {
     background: rgb(192, 189, 189);
 
+  }
+
+  .display-4 {
+    margin-left: 10px;
   }
 
   .dateDisplay {
