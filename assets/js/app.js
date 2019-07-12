@@ -11,7 +11,7 @@ $(document).ready(function(){
     });
 
 // These buttons will redirect to a different page so users can change and confirm their current info
-    $("#nameButton").on("click",(function(){
+    // $("#nameButton").on("click",(function(){
         
     }
     ))
