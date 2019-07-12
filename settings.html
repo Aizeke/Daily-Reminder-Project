@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Settings</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <container>
+       <div class="row">
+           <div class="col-md-12">
+               <h1>Settings</h1>
+           </div>
+       </div>
+        <!-- Form and submit button to change name and correspondingly reflect the name change in the top left of the navbar, needs to be linked to navbar -->
+       <div class="row">
+            <div class="col-md-12">
+                <h3>Set a new name</h3>
+            </div>  
+        </div>    
+        
+        <div class="row">
+            <div class="col-md-2">
+                    <form action="/"></form>
+                    <input type="text" name="nameForm"><br><br>
+            </div>
+            <div class="col-md-2">
+                
+                    <button type="submit" class="nameChange" value="Submit">Submit</button>
+            </div>
+       </div>
+
+       <!-- Form and submit button to change location and reflect it in the homepage where the weather widget is, needs to be linked to weather API -->
+        <div class="row">
+            <div class="col-md-12">
+               <h3>Change location</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <form action="/"></form>
+                <input type="text" class="locationForm"><br>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="locationChange" value="submit">Submit</button>
+            </div>
+        </div>
+
+
+        <!-- Drop-down list of the different news topics and submit button to confirm the changes, needs to be linked to newsAPI -->
+        <div class="row">
+            <div class="col-md-12">
+               <h3>Change news preferences</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                    <select>
+                            <option value="business">Business</option>
+                            <option value="entertainment ">Entertainment</option>
+                            <option value="general">General</option>
+                            <option value="health">Health</option>
+                            <option value="science">Science</option>
+                            <option value="sports">Sports</option>
+                            <option value="technology">Technology</option>
+                        </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="newsChange" value="submit">Submit</button>
+            </div>
+        </div>
+        
+        <!-- Button to reset all data, delete all tasks on the to-do list, name, location and news preferences. Needs to be linked with everything and should redirect to the initial startup page. This button/feature isn't too important just a neat addition -->
+        <div class="row">
+            <div class="col-md-12">
+                <button id="thirdImpact" type="button">Self Destruct Button (beta)</button>
+            </div>
+        </div>
+
+
+
+
+
+    </container>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
