@@ -1,8 +1,5 @@
 $(document).ready(function () {
 
-  // ===============================================================================================
-  // ===============================================================================================
-
   // bbs top 10 headlines
   var queryURL = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=22aaeb67a2434db9922c8696bbd7c2e6";
 
@@ -10,7 +7,6 @@ $(document).ready(function () {
     url: queryURL,
     method: "GET"
   })
-    // We store all of the retrieved data inside of an object called "response"
     .then(function (response) {
 
       // Log the queryURL
@@ -18,8 +14,27 @@ $(document).ready(function () {
 
       // Log the resulting object
       console.log(response);
+    
+      for (var i = 0; i < 10; i++) {
+        var newsDiv = $("<div>");
+        newsDiv.addClass("carousel-item");
+        var newsImage = $("<img>").attr("src", response.articles[i].urlToImage);
+        newsImage.addClass("d-block w-100");
+        newsDiv.append(newsImage);
 
 
+        // newsLink.attr("href",response.articles[i].url);
+        // newsDiv.append(newsLink);
+        var capDiv = $("<div>");
+        capDiv.addClass("carousel-caption d-none d-md-block");
+
+        var newsTitle = $("<h5>").text(response.articles[i].title);
+        // var newsLink = $("<a>");
+        // newsTitle.append(newsLink);
+        capDiv.append(newsTitle);
+        newsDiv.append(capDiv);
+        $(".carousel-inner").append(newsDiv);
+      }
     });
 
   // any topic the user is interested in, here im using california for an example
@@ -38,8 +53,6 @@ $(document).ready(function () {
 
       // Log the resulting object
       console.log(response);
-
-
     });
   // ===============================================================================================
   // ===============================================================================================
@@ -75,8 +88,6 @@ $(document).ready(function () {
       console.log("Wind Speed: " + data.wind.speed);
       console.log("Humidity: " + data.main.humidity);
       console.log("Temperature (F): " + data.main.temp);
-
-
     });
 
   // NASA api
@@ -84,7 +95,6 @@ $(document).ready(function () {
 
   // Here we are building the URL we need to query the database
   var queryURL = "https://api.nasa.gov/planetary/apod?api_key=" + APIKey;
-
 
   axios.get(queryURL)
     // We store all of the retrieved data inside of an object called "response"
@@ -98,6 +108,7 @@ $(document).ready(function () {
       console.log(response.data);
 
       // Transfer content to HTML
+
       $(".date").html("<h3> Date:" + data.date + "</h3>");
       $(".explanation").text("Explanation: " + data.explanation);
       $(".title").text("Title: " + data.title);
