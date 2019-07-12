@@ -79,10 +79,12 @@ $(document).ready(function () {
       console.log(response.data);
 
       // Transfer content to HTML
-      $(".city").html("<h1>" + data.name + " Weather Details</h1>");
+      $(".city").html("<h4>" + data.name + " Weather Details</h4>");
+      $(".description").text("Forecast: " + data.weather[0].description);
+      $(".temp").text("Temperature (F) " + data.main.temp);
       $(".wind").text("Wind Speed: " + data.wind.speed);
       $(".humidity").text("Humidity: " + data.main.humidity);
-      $(".temp").text("Temperature (F) " + data.main.temp);
+      
 
       // Log the data in the console as well
       console.log("Wind Speed: " + data.wind.speed);
@@ -109,7 +111,7 @@ $(document).ready(function () {
 
       // Transfer content to HTML
 
-      $(".date").html("<h3> Date:" + data.date + "</h3>");
+      // $(".date").html("<h3>Date:" + data.date + "</h3>");
       $(".explanation").text("Explanation: " + data.explanation);
       $(".title").text("Title: " + data.title);
 
