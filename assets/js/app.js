@@ -98,13 +98,13 @@ axios.get(queryURL)
       console.log(response.data);
 
       // Transfer content to HTML
-      //$(".date").html("<h3> Date:" + data.date + "</h3>");
-     // $(".explanation").text("Explanation: " + data.explanation);
-      //$(".title").text("Title: " + data.title);
+      $(".date").html("<h3> Date:" + data.date + "</h3>");
+     $(".explanation").text("Explanation: " + data.explanation);
+      $(".title").text("Title: " + data.title);
     
     var imgURL = data.url;
     var image = $("<img>").attr("src", imgURL);
-    // $(".url-displayed").append(image);
+    $(".url-displayed").append(image);
       
 
       // Log the data in the console as well
