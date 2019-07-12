@@ -6,8 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daily Reminder</title>
+    <!-- Bootstrap CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link
+        href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
+    <!-- Link CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -85,12 +100,100 @@
     </container>
 
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+        <a class="navbar-brand" href="#">Hello,</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
+    <container>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="dateDisplay">
+                        <h1 class="display-4">To do</h1>
+                        <div class="center">
+                            <div id="day"></div>
+                            <div id="month"></div>
+                            <div id="year"></div>
+                            <div id="weekday"></div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+                    <input type="text" id="itemInput" placeholder="Add To List...">
+                    <p class="lead">
+                        <button type="button" class="btn btn-success btn-add">+</button>
+                        <button type="button" class="btn btn-warning btn-priority">!</button>
+                    </p>
+                    <ul class="lead" id="unorderedList"></ul>
+                    <hr class="my-4">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row mb-2 carouselRow">
+                    <div id="carouselSlideShow" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="http://dreamstop.com/wp-content/uploads/2013/06/news-dreams.jpg"
+                                    class="d-block w-100" alt="news">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselSlideShow" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselSlideShow" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row socialMediaRow">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="daily-image">
+                    <h3 class="display-4">NASA Daily</h3>
+                    <div class="date"></div>
+                    <div class="title"></div>
+                    <div class="url-displayed"></div>
+                    <div class="explanation"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="weather-display">
+                    <h3 class="display-4">Weather Now</h3>
+                    <div class="city"></div>
+                    <div class="wind"></div>
+                    <div class="humidity"></div>
+                    <div class="temp"></div>
+                </div>
+            </div>
+        </div>
+    </container>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 
