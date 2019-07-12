@@ -14,7 +14,7 @@ $(document).ready(function () {
 
       // Log the resulting object
       console.log(response);
-    
+
       for (var i = 0; i < 10; i++) {
         var newsDiv = $("<div>");
         newsDiv.addClass("carousel-item");
@@ -118,17 +118,19 @@ $(document).ready(function () {
       var imgURL = data.url;
 
       function checkURL(url) {
-      if (url.match(/\.(jpeg|jpg|gif|png)$/) != null){
-    
-        var image = $("<img class=nasaimage>").attr("src", imgURL);
-        $(".url-displayed").append(image);
+        if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+
+          var image = $("<img>").attr("src", imgURL);
+          image.attr('class', 'img-fluid');
+          $(".url-displayed").append(image);
+        }
+        else {
+          var video = $("<iframe allowfullscreen>" + imgURL + "</iframe>").attr("src", imgURL);
+          image.attr('class', 'img-fluid');
+          $(".url-displayed").append(video);
+        }
       }
-      else {
-        var video = $("<iframe allowfullscreen>" + imgURL + "</iframe>").attr("src", imgURL);
-        $(".url-displayed").append(video);
-      }
-    }
-    checkURL(imgURL);
+      checkURL(imgURL);
 
       // Log the data in the console as well
       console.log("<h3> Date:" + data.date + "</h3>");
@@ -138,7 +140,74 @@ $(document).ready(function () {
 
     });
 
+});
 
 
+// ==== Isaac's ToDo List ===============
+var date = new Date();
+var monthsArr = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'DEC'];
+var daysArr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var month = monthsArr[date.getMonth()];
+var year = date.getFullYear();
+var day = date.getDate();
+var weekday = daysArr[date.getDay()];
 
+$('#day').text(day);
+$('#month').text(month);
+$('#year').text(year);
+$('#weekday').text(weekday);
+
+// On click whole item will strike a line thorugh it
+$(".lead").on("click", "li", function () {
+  $(this).toggleClass("done");
+});
+
+$(document).on('click', '.delete', function(){
+  $(this).parent().remove();
+})
+
+// Adds an item to the todo list at the very bottom
+$('.btn-add').on('click', function () {
+
+  var li = $('<li>');
+
+  var val = $('#itemInput').val();
+
+  li.text(val);
+
+  if (val === '') {
+    alert("Field is Empty!");
+  } else {
+    $('#unorderedList').append(li);
+
+    var span = $('<span>');
+    span.html("&#215;");
+    span.attr('class', 'delete');
+    li.append(span);
+  }
+
+  $('#itemInput').val('');
+});
+
+// Adds an item to the todo list at the very top
+$('.btn-priority').on('click', function () {
+
+  var li = $('<li>');
+
+  var val = $('#itemInput').val();
+
+  li.text(val);
+
+  if (val === '') {
+    alert("Field is Empty!");
+  } else {
+    $('#unorderedList').prepend(li);
+
+    var span = $('<span>');
+    span.html("&#215;");
+    span.attr('class', 'delete');
+    li.append(span);
+  }
+
+  $('#itemInput').val('');
 });

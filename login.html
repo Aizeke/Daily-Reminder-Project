@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link
+        href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+        <a class="navbar-brand welcomeUser" href="#">Hello,</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./settings.html">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.html">Login <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <container>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Welcome to your new daily planner!</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Before we get started, please input your details.</h3>
+            </div>
+        </div>
+        <!-- Here the user inputs their details such as name, location and news preferences (the preferences portion not being as big a concern as getting the name and location to work) -->
+        <!-- Need to get name linked to navbar div so it displays the "firstname" portion up in the top left, saying Hello "firstname"  -->
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/"></form>
+                First name:<br>
+                <input type="text" name="firstname"><br>
+                Last name:<br>
+                <input type="text" name="lastname"><br><br>
+                <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-2">
+                <h3>Input a location for weather info.</h3>
+            </div>
+        </div>
+        <!-- The text inputted into the location form needs to link to the weather API on the homepage -->
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/"></form>
+                Location:<br>
+                <input type="text" name="locationForm"><br><br>
+                <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <!-- The options below need to link to the newsAPI and be able to select a news category to display (not as urgent or necessary as getting the name and location forms to function properly) -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Select news preferences.</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <select>
+                    <option value="business">Business</option>
+                    <option value="entertainment ">Entertainment</option>
+                    <option value="general">General</option>
+                    <option value="health">Health</option>
+                    <option value="science">Science</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <button type="submit">Confirm All Info</button>
+            </div>
+        </div>
+
+        <!-- Code to redirect after pressing "submit", should link to main homepage that displays to-do list and API widgets -->
+        <!-- <form action="./">
+            <input type="submit">
+        </form> -->
+    </container>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
