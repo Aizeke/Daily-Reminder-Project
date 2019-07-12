@@ -19,13 +19,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <link
+        href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic'
+        rel='stylesheet' type='text/css'>
     <!-- Link CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
         <a class="navbar-brand" href="#">Hello,</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,29 +54,24 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="jumbotron jumbotron-fluid">
-                    <h1 class="display-4">To do</h1>
+                    <div class="dateDisplay">
+                        <h1 class="display-4">To do</h1>
+                        <div class="center">
+                            <div id="day"></div>
+                            <div id="month"></div>
+                            <div id="year"></div>
+                            <div id="weekday"></div>
+                        </div>
+                    </div>
+
                     <hr class="my-4">
-                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima non dignissimos
-                        eius quos cumque voluptates tenetur aut necessitatibus dolorem nisi accusantium perspiciatis,
-                        enim omnis voluptatem quaerat aspernatur sequi debitis sint?
-                        A blanditiis sunt alias hic eaque, fugiat temporibus aliquam doloribus sapiente tempore libero
-                        ipsam, autem quisquam repellat minus quasi? Impedit corporis, blanditiis unde laudantium
-                        officiis officia fuga. Perferendis, fugiat labore!
-                        Corporis cumque possimus aperiam quam eveniet numquam, aliquam ea eaque sed quaerat libero!
-                        Commodi, iusto alias, esse dolores provident eaque aut laudantium adipisci corrupti tenetur
-                        accusamus. Excepturi adipisci quam consequuntur!
-                        Est, amet officiis ad accusantium dolore perferendis, enim itaque totam aliquid perspiciatis nam
-                        voluptatibus aspernatur? Voluptas animi magni dignissimos, quod maiores qui? Iste, unde magni
-                        mollitia voluptatibus sit quam magnam!
-                        Quis repellat hic deleniti fugit, beatae explicabo voluptatem ipsum perferendis. Cupiditate ab
-                        ipsum asperiores a quasi natus deserunt adipisci beatae soluta est? Dignissimos maxime provident
-                        veniam quas ex eius! Quia!</p>
-                    <hr class="my-4">
+                    <input type="text" id="itemInput" placeholder="Add To List...">
                     <p class="lead">
-                        <button type="button" class="btn btn-success">+</button>
-                        <button type="button" class="btn btn-danger">-</button>
-                        <button type="button" class="btn btn-warning">!</button>
+                        <button type="button" class="btn btn-success btn-add">+</button>
+                        <button type="button" class="btn btn-warning btn-priority">!</button>
                     </p>
+                    <ul class="lead" id="unorderedList"></ul>
+                    <hr class="my-4">
                 </div>
             </div>
             <div class="col-md-4">
@@ -96,16 +94,6 @@
                     </div>
                 </div>
                 <div class="row socialMediaRow">
-                    My name is Yoshikage Kira. I'm 33 years old. My house is in the northeast section of Morioh, where
-                    all the villas are, and I am not married. I work as an employee for the Kame Yu department stores,
-                    and I get home every day by 8 PM at the latest. I don't smoke, but I occasionally drink. I'm in bed
-                    by 11 PM, and make sure I get eight hours of sleep, no matter what. After having a glass of warm
-                    milk and doing about twenty minutes of stretches before going to bed, I usually have no problems
-                    sleeping until morning. Just like a baby, I wake up without any fatigue or stress in the morning. I
-                    was told there were no issues at my last check-up. I'm trying to explain that I'm a person who
-                    wishes to live a very quiet life. I take care not to trouble myself with any enemies, like winning
-                    and losing, that would cause me to lose sleep at night. That is how I deal with society, and I know
-                    that is what brings me happiness. Although, if I were to fight I wouldn't lose to anyone.
                 </div>
             </div>
         </div>
