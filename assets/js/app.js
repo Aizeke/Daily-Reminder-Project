@@ -1,36 +1,31 @@
 $(document).ready(function () {
 
   // bbs top 10 headlines
-  var queryURL = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=22aaeb67a2434db9922c8696bbd7c2e6";
+  var queryURL = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=22aaeb67a2434db9922c8696bbd7c2e6";
 
   $.ajax({
     url: queryURL,
     method: "GET"
   })
     .then(function (response) {
-
-      // Log the queryURL
-      console.log(queryURL);
-
-      // Log the resulting object
-      console.log(response);
-
+ 
+ 
+ 
       for (var i = 0; i < 10; i++) {
         var newsDiv = $("<div>");
         newsDiv.addClass("carousel-item");
         var newsImage = $("<img>").attr("src", response.articles[i].urlToImage);
         newsImage.addClass("d-block w-100");
         newsDiv.append(newsImage);
-
-
-        // newsLink.attr("href",response.articles[i].url);
-        // newsDiv.append(newsLink);
+ 
+ 
         var capDiv = $("<div>");
         capDiv.addClass("carousel-caption d-none d-md-block");
-
-        var newsTitle = $("<h5>").text(response.articles[i].title);
-        // var newsLink = $("<a>");
-        // newsTitle.append(newsLink);
+ 
+ 
+        var newsTitle = $("<a>").text(response.articles[i].title);
+        newsTitle.attr("href",response.articles[i].url);
+        newsTitle.attr('target', '_blank');
         capDiv.append(newsTitle);
         newsDiv.append(capDiv);
         $(".carousel-inner").append(newsDiv);
@@ -47,9 +42,6 @@ $(document).ready(function () {
   })
     // We store all of the retrieved data inside of an object called "response"
     .then(function (response) {
-
-      // Log the queryURL
-      console.log(queryURL);
 
       // Log the resulting object
       console.log(response);
@@ -84,7 +76,7 @@ $(document).ready(function () {
       $(".temp").text("Temperature (F) " + data.main.temp);
       $(".wind").text("Wind Speed: " + data.wind.speed);
       $(".humidity").text("Humidity: " + data.main.humidity);
-      
+
 
       // Log the data in the console as well
       console.log("Wind Speed: " + data.wind.speed);
@@ -101,9 +93,6 @@ $(document).ready(function () {
   axios.get(queryURL)
     // We store all of the retrieved data inside of an object called "response"
     .then(function (response) {
-
-      // Log the queryURL
-      console.log(queryURL);
 
       var data = response.data
       // Log the resulting object
@@ -130,6 +119,7 @@ $(document).ready(function () {
           $(".url-displayed").append(video);
         }
       }
+
       checkURL(imgURL);
 
       // Log the data in the console as well
@@ -139,6 +129,41 @@ $(document).ready(function () {
       console.log('<img src="' + data.url + '">');
 
     });
+
+    $('#confirmLogin').on('click', function (event) {
+      event.preventDefault();
+
+      var firstName = $('#firstNameLogin').val();
+      var lastName = $('#lastNameLogin').val();
+      var loginLocation = $('#weatherLocation').val();
+      var newsTopic = $('#newTopicLogin').val();
+
+      localStorage.setItem('firstName', firstName);
+      localStorage.setItem('lastName', lastName);
+      localStorage.setItem('location', loginLocation);
+      localStorage.setItem('topic', newsTopic);
+    
+      console.log(firstName, lastName, loginLocation, newsTopic);
+    
+      if (firstName === ' ' && lastName === ' ') {
+        alert('Name is invalid');
+      } else {
+        $(".welcomeUser").html('Hello, ' + firstName + ' ' + lastName);
+      }
+    
+      if (loginLocation === ' ') {
+        alert('Location needs an input');
+      } else {
+        location = loginLocation;
+      }
+      
+      topic = newsTopic;
+    });
+
+    localStorage.getItem('firstName');
+    localStorage.getItem('lastName');
+    localStorage.getItem('location');
+    localStorage.getItem('topic');
 
 });
 
@@ -162,7 +187,7 @@ $(".lead").on("click", "li", function () {
   $(this).toggleClass("done");
 });
 
-$(document).on('click', '.delete', function(){
+$(document).on('click', '.delete', function () {
   $(this).parent().remove();
 })
 
