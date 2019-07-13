@@ -70,11 +70,8 @@
         <div class="row">
             <div class="col-md-12">
                 <form action="/"></form>
-                First name:<br>
-                <input type="text" name="firstname"><br>
-                Last name:<br>
-                <input type="text" name="lastname"><br><br>
-                <input type="submit" value="Submit">
+                <input id="firstNameLogin" type="text" name="firstname" placeholder="First Name"><br><br>
+                <input id="lastNameLogin" type="text" name="lastname" placeholder="Last Name"><br><br>
                 </form>
             </div>
         </div>
@@ -87,9 +84,7 @@
         <div class="row">
             <div class="col-md-12">
                 <form action="/"></form>
-                Location:<br>
-                <input type="text" name="locationForm"><br><br>
-                <input type="submit" value="Submit">
+                <input type="text" id="weatherLocation" name="locationForm" placeholder="Location"><br><br>
                 </form>
             </div>
         </div>
@@ -102,7 +97,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <select>
+                <select class="form-control" id="newTopicLogin">
                     <option value="business">Business</option>
                     <option value="entertainment ">Entertainment</option>
                     <option value="general">General</option>
@@ -115,22 +110,15 @@
         </div>
         <div class="row">
             <div class="col-md-12 mt-4">
-                <button type="submit">Confirm All Info</button>
+                <input type="submit" value="Confirm All Info" id="confirmLogin">
             </div>
         </div>
 
-        <!-- Code to redirect after pressing "submit", should link to main homepage that displays to-do list and API widgets -->
-        <!-- <form action="./">
-            <input type="submit">
-        </form> -->
     </container>
-
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 

@@ -2,8 +2,10 @@
     margin: 5px;
 }
 
-h5 {
-    color:red;
+h5, a {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .title {
@@ -15,10 +17,6 @@ h5 {
     max-width: 300px;
     float: left;
     padding-right: 20px;
-}
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    text-transform: uppercase;
 }
 
 #carouselSlideShow {
@@ -87,6 +85,12 @@ h5 {
     text-align: center;
   }
 
+  #newTopicLogin {
+    font-size: 15px;
+    letter-spacing: 10px;
+    color: grey;
+  }
+
   .done {
     text-decoration: line-through;
     color: gray;
@@ -96,4 +100,3 @@ h5 {
   .btn-add, .btn-priority {
     width: 30%;
   }
-
