@@ -110,7 +110,7 @@ $(document).ready(function () {
         if (url.match(/\.(jpeg|jpg|gif|png)$/) != null) {
 
           var image = $("<img>").attr("src", imgURL);
-          image.attr('class', 'img-fluid');
+          image.attr('class', 'nasaimage img-fluid');
           $(".url-displayed").append(image);
         }
         else {
